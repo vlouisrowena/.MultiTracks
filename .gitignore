@@ -5,3 +5,6 @@ DB/obj/
 Web/multitracks.com/multitracks.com/Bin/
 packages/
 .vs/
+.vs/multitracks.com-dotNet/FileContentIndex/
+DB/MultitracksDB.jfm
+DB/MultitracksDB.sqlproj.user
