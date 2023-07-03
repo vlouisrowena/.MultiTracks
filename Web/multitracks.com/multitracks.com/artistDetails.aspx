@@ -11,8 +11,8 @@
 	<title>MultiTracks.com</title>
 	<!-- include the site stylesheet -->
 
-      <link media="all" rel="stylesheet" href="https://mtracks.azureedge.net/public/css/v22/main.min.css?v=4">
-
+      <link media="all" rel="stylesheet"  href="PageToSync/css/index.css">
+	 
 </head>
 	<body class="premium standard u-fix-fancybox-iframe">
 		<form>
@@ -52,10 +52,10 @@
 				<nav class="discovery--nav">
 					<ul class="discovery--nav--list tab-filter--list u-no-scrollbar">
 						<li class="discovery--nav--list--item tab-filter--item is-active">
-							<a class="tab-filter" href="../artists/details.aspx">Overview</a>
+							<a class="tab-filter" href="../artistDetails.aspx">Overview</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
-							<a class="tab-filter" href="../artists/songs/details.aspx">Songs</a>
+							<a class="tab-filter" href="../artist/default.aspx/?id=5">Songs</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
 							<a class="tab-filter" href="../artists/albums/details.aspx">Albums</a>
@@ -151,11 +151,16 @@
 									<div class="discovery--section--header">
 										<h2>Biography</h2>
 									</div><!-- /.discovery-section-header -->
+									<%--<asp:ListView ID="biographyView" runat="server">
+										<ItemTemplate>--%>
 											<div class="artist-details--biography biography">
-												<p>
-													<%= Biography  %>
-												</p>					
+												<p><%= FormatBiographyText(Biography) %> </p>
+
+												<a href="#" onclick="showFullBiography(); ">Read More...</a>
+												
 											</div>
+										<%--</ItemTemplate>
+									</asp:ListView>--%>
 										
 									
 								</section><!-- /.biography-section -->
@@ -169,4 +174,5 @@
 			<a class="accessibility" href="#wrapper" tabindex="20">Back to top</a>
 		</form>
 	</body>
+	
 </html>
