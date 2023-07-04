@@ -14,7 +14,7 @@ public partial class ArtistDetails : MultitracksPage
     protected void Page_Load(object sender, EventArgs e)
     {
         var sql = new SQL();
-        sql.Parameters.Add("@artistId", 5);
+        sql.Parameters.Add("@artistId", 31);
         var data = sql.ExecuteStoredProcedureDT("GetArtistDetails");   
         
         if (data.Rows.Count > 0)
@@ -26,9 +26,10 @@ public partial class ArtistDetails : MultitracksPage
             artistBanner.DataBind();
 
             Biography = data.Rows[0]["artistBiography"].ToString();
-           
+            
             songList.DataSource = data; 
             songList.DataBind();
+            
 
             List<object> uniqueChecker = new List<object>();
 

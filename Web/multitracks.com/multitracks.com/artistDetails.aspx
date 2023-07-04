@@ -55,10 +55,10 @@
 							<a class="tab-filter" href="../artistDetails.aspx">Overview</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
-							<a class="tab-filter" href="../artist/default.aspx/?id=5">Songs</a>
+							<a class="tab-filter" href="../artist/details.aspx">Songs</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
-							<a class="tab-filter" href="../artists/albums/details.aspx">Albums</a>
+							<a class="tab-filter" href="../artist/details.aspx/">Albums</a>
 						</li>
 					</ul> <!-- /.browse-header-filters -->
 				</nav>
@@ -151,18 +151,12 @@
 									<div class="discovery--section--header">
 										<h2>Biography</h2>
 									</div><!-- /.discovery-section-header -->
-									<%--<asp:ListView ID="biographyView" runat="server">
-										<ItemTemplate>--%>
 											<div class="artist-details--biography biography">
 												<p><%= FormatBiographyText(Biography) %> </p>
 
 												<a href="#" onclick="showFullBiography(); ">Read More...</a>
 												
 											</div>
-										<%--</ItemTemplate>
-									</asp:ListView>--%>
-										
-									
 								</section><!-- /.biography-section -->
 							</main><!-- /.discovery-section -->
 				</div><!-- /.standard-container -->
