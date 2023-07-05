@@ -8,3 +8,4 @@ packages/
 .vs/multitracks.com-dotNet/FileContentIndex/
 DB/MultitracksDB.jfm
 DB/MultitracksDB.sqlproj.user
+/DB/MultiTracksDB.dbmdl
