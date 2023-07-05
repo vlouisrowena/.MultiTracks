@@ -74,6 +74,7 @@
 
 									<ul id="playlist" class="song-list mod-new mod-menu">
 										<asp:Repeater ID ="songList" runat="server">
+											
 												<ItemTemplate>
 													<li class="song-list--item media-player--row">
 

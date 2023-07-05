@@ -14,46 +14,26 @@ public partial class ArtistDetails : MultitracksPage
     protected void Page_Load(object sender, EventArgs e)
     {
         var sql = new SQL();
-        sql.Parameters.Add("@artistId", 31);
-        var data = sql.ExecuteStoredProcedureDT("GetArtistDetails");   
-        
-        if (data.Rows.Count > 0)
-        {
-            DataTable dataTable = data.Clone();
-            dataTable.ImportRow(data.Rows[0]);
+        sql.Parameters.Add("@artistId", 5);
+        var data = sql.ExecuteStoredProcedureDS("GetArtistDetails");
 
-            artistBanner.DataSource = dataTable;
+        if (data.Tables[0].Rows.Count > 0)
+        {
+           
+            artistBanner.DataSource = data.Tables[0];
             artistBanner.DataBind();
 
-            Biography = data.Rows[0]["artistBiography"].ToString();
-            
-            songList.DataSource = data; 
+            Biography = data.Tables[0].Rows[0]["artistBiography"].ToString();
+
+            songList.DataSource = data.Tables[2];
             songList.DataBind();
-            
 
-            List<object> uniqueChecker = new List<object>();
-
-            for(int i = 0; i < data.Rows.Count; i++)
-            {
-                var value = data.Rows[i]["albumTitle"];
-
-                if(!uniqueChecker.Contains(value))
-                {
-                    uniqueChecker.Add(value);
-                }
-                else
-                {
-                    data.Rows.Remove(data.Rows[i]);
-                }
-            }
-            
-            albumList.DataSource = data;
+            albumList.DataSource = data.Tables[1];
             albumList.DataBind();
 
-
         }
-
     }
+
 
     protected string FormatBiographyText(string Biography)
     {
@@ -66,9 +46,8 @@ public partial class ArtistDetails : MultitracksPage
             formattedBiography += "<p>" + paragraph + "</p>";
         }
 
-        return formattedBiography;
+        return formattedBiography;      
+
     }
-
-
 
 }
