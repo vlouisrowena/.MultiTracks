@@ -34,7 +34,6 @@ public partial class ArtistDetails : MultitracksPage
         }
     }
 
-
     protected string FormatBiographyText(string Biography)
     {
         string[] delimiters = { "<!-- read more -->", "\n" };
