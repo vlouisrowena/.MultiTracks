@@ -15,5 +15,7 @@ To get started:
 
 - Clone the repo locally	
 - Open the solution in Visual Studio	
-- Run "Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r" from the Package Manager Console	
-- Finally run the project for further instructions
+- Run "Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r" from the Package Manager Console	for each project (MTDataAccess, multitracks.com, artistDetails.aspx.
+- Finally view artistDetails.aspx and the MultiTracks API in the browser.
+
+Excited for you to see the project! Let me know if you have any questions. 
