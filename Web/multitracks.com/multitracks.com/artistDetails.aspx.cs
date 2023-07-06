@@ -15,7 +15,7 @@ public partial class ArtistDetails : MultitracksPage
     {
 
         var sql = new SQL();
-        sql.Parameters.Add("@artistId", 0 );
+        sql.Parameters.Add("@artistId", 31 );
         var data = sql.ExecuteStoredProcedureDS("GetArtistDetails");
 
         if (data.Tables[0].Rows.Count > 0)
