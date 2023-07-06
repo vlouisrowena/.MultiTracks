@@ -1,9 +1,11 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTDataAccess", "Core\MTDataAccess\MTDataAccess.csproj", "{564E4868-9DC3-4750-A05A-337A0EC7D421}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C0455F77-4C86-44AB-A96F-FD433BA1C3BB} = {C0455F77-4C86-44AB-A96F-FD433BA1C3BB}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5E4111CC-7F88-4DF2-8242-303BB8C79917}"
 EndProject
