@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MultiTracksAPI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +19,7 @@ builder.Services.AddDbContext<MultiTracksDBContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<DbContext, MultiTracksDBContext>();
-builder.Services.AddScoped<IMultiTracksDBContextProcedures, MultiTracksDBContextProcedures>();
+//builder.Services.AddScoped<IMultiTracksDBContextProcedures, MultiTracksDBContextProcedures>();
 
 
 var app = builder.Build();

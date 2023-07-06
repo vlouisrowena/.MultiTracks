@@ -1,78 +1,47 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MultiTracksAPI.Models;
 
 namespace MultiTracksAPI.Controllers
 {
     public class ArtistController : Controller
     {
-       
-        // GET: ArtistController/Details/5
-        public ActionResult Details(int id)
+        private readonly MultiTracksDBContext _dbContext;
+
+        public ArtistController(MultiTracksDBContext dbContext)
         {
-            return View();
+            _dbContext = dbContext;
         }
 
-        // GET: ArtistController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ArtistController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [HttpGet]
+        [Route("api/artist/search")]
+        public async Task<ActionResult<string>> Search (string artistTitle)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var artistsList = await (from artist in _dbContext.Artist
+                                         where artist.Title.Contains(artistTitle)
+                                         select artist).ToListAsync();
+                return Ok(artistsList);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                // Log or handle the exception
+                return StatusCode(500, "An error occurred while processing the request.");
             }
+
         }
 
-        // GET: ArtistController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: ArtistController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [Route("api/artist/add")]
+        public async Task<ActionResult<Artist>> Add(Artist artist )
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+           _dbContext.Artist.Add (artist);
+            await _dbContext.SaveChangesAsync();
+            return CreatedAtAction(nameof(Search), new { ar = artist.Title }, artist);
         }
 
-        // GET: ArtistController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ArtistController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

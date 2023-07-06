@@ -117,3 +117,4 @@ C:\Users\louis\source\repos\.MultiTracks\MultiTracksAPI\bin\Debug\net6.0\System.
 C:\Users\louis\source\repos\.MultiTracks\MultiTracksAPI\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\louis\source\repos\.MultiTracks\MultiTracksAPI\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\louis\source\repos\.MultiTracks\MultiTracksAPI\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\louis\source\repos\.MultiTracks\MultiTracksAPI\bin\Debug\net6.0\efpt.config.json
