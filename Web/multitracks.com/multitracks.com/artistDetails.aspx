@@ -11,7 +11,7 @@
 	<title>MultiTracks.com</title>
 	<!-- include the site stylesheet -->
 
-      <link media="all" rel="stylesheet"  href="PageToSync/css/index.css">
+      <link media="all" rel="stylesheet"  href="styles/css/index.css">
 	 
 </head>
 	<body class="premium standard u-fix-fancybox-iframe">
