@@ -13,18 +13,20 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api.multitracks.com",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }//,
-    //"Docker": {
-    //  "commandName": "Docker",
-    //  "launchBrowser": true,
-    //  "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-    //  "publishAllPorts": true,
-    //  "useSSL": true
-    //}
+      },
+      "applicationUrl": "https://api.multitracks.com/"
+
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {

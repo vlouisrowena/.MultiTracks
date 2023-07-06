@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace MultiTracksAPI.Controllers
 {
-    [Route("[controller]")]
+    [Route("artist")]
     [ApiController]
-    public class artistController : Controller
+    public class ArtistController : Controller
     {
         private readonly MultiTracksDBContext _dbContext;
 
-        public artistController(MultiTracksDBContext dbContext)
+        public ArtistController(MultiTracksDBContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -30,7 +30,7 @@ namespace MultiTracksAPI.Controllers
 
 
         [HttpPost("add")]
-        public async Task<ActionResult<Artist>> Add(Artist artist )
+        public async Task<ActionResult<Artist>> Add([FromQuery] Artist artist )
         {
            _dbContext.Artist.Add (artist);
             await _dbContext.SaveChangesAsync();

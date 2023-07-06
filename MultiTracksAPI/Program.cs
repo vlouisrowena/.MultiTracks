@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using MultiTracksAPI.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,24 +19,35 @@ builder.Services.AddDbContext<MultiTracksDBContext>(options =>
 
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+
 builder.Services.AddScoped<DbContext, MultiTracksDBContext>();
-//builder.Services.AddScoped<IMultiTracksDBContextProcedures, MultiTracksDBContextProcedures>();
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(c =>
+    {
+        c.RouteTemplate = "api.multitracks.com/{documentname}/swagger.json";
+
+    });
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/api.multitracks.com/v1/swagger.json", "api.multitracks.com");
+        c.RoutePrefix = "api.multitracks.com";
+
+    });
+
+
 }
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+app.UseAuthorization();
 
 app.Run();

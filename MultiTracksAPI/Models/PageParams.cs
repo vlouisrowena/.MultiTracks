@@ -3,7 +3,7 @@
     public class PageParams
     {
 
-        const int maxPageSize = 30; 
+        const int maxPageSize = 30; //max 30 songs per page
         public int pageNumber { get; set; } = 1;
         private int _pageSize = 10;  
         public int PageSize
