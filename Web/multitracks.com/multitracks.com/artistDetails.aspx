@@ -55,10 +55,10 @@
 							<a class="tab-filter" href="../artistDetails.aspx">Overview</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
-							<a class="tab-filter" href="../artist/details.aspx">Songs</a>
+							<a class="tab-filter" href="../artistDetails.aspx">Songs</a>
 						</li>
 						<li class="discovery--nav--list--item tab-filter--item">
-							<a class="tab-filter" href="../artist/details.aspx/">Albums</a>
+							<a class="tab-filter" href="../artistDetails.aspx">Albums</a>
 						</li>
 					</ul> <!-- /.browse-header-filters -->
 				</nav>
@@ -163,8 +163,6 @@
 				</div><!-- /.standard-container -->
 			</div><!-- /.wrapper -->
 
-			
-			
 
 			<a class="accessibility" href="#wrapper" tabindex="20">Back to top</a>
 		</form>
