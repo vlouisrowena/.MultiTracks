@@ -2,40 +2,34 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MultiTracksAPI.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 
 namespace MultiTracksAPI.Controllers
 {
-    public class ArtistController : Controller
+    [Route("[controller]")]
+    [ApiController]
+    public class artistController : Controller
     {
         private readonly MultiTracksDBContext _dbContext;
 
-        public ArtistController(MultiTracksDBContext dbContext)
+        public artistController(MultiTracksDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        [HttpGet]
-        [Route("api/artist/search")]
+        [HttpGet("search")]
         public async Task<ActionResult<string>> Search (string artistTitle)
         {
-            try
-            {
-                var artistsList = await (from artist in _dbContext.Artist
-                                         where artist.Title.Contains(artistTitle)
-                                         select artist).ToListAsync();
-                return Ok(artistsList);
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the exception
-                return StatusCode(500, "An error occurred while processing the request.");
-            }
 
+            var artistsList = await (from artist in _dbContext.Artist
+                                        where artist.Title.Contains(artistTitle)
+                                        select artist).ToListAsync();
+            return Ok(artistsList);
         }
 
 
-        [HttpPost]
-        [Route("api/artist/add")]
+        [HttpPost("add")]
         public async Task<ActionResult<Artist>> Add(Artist artist )
         {
            _dbContext.Artist.Add (artist);
