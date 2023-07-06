@@ -22,8 +22,23 @@
 
 			<!-- allow a user to go to the main content of the page -->
 			<a class="accessibility" href="#main" tabindex="21">Skip to Content</a>
-
-			<div class="wrapper mod-standard mod-gray">
+			<header class="header mod-interior remodal-bg">
+				<div class="header--holder">
+				  <a class="header--mobile--logo" href="../artistDetails.aspx">
+                     <img src="//mtracks.azureedge.net/public/images/site/logo/en/logo-mono.svg" id="header_logo" class="header--mobile--logo--img mod-full" alt="MultiTracks.com">   
+                  </a>
+				</div>
+			</header>
+			<div>
+				<div class ="global-search--no-results">
+					<div class ="global-search--no-results--top">
+						<p runat="server" class ="global-search--no-results--top--text " id="errorMessage">
+								 We're sorry. No results were found for the entered artist Id
+						</p>
+					</div>
+				</div>
+			</div>	
+			<div class="wrapper mod-standard mod-gray"  runat="server" id="artistForm">
 				
 						<div class="details-banner">
 							<div class="details-banner--overlay"></div>
@@ -153,10 +168,8 @@
 										<h2>Biography</h2>
 									</div><!-- /.discovery-section-header -->
 											<div class="artist-details--biography biography">
-												<p><%= FormatBiographyText(Biography) %> </p>
-
-												<a href="#" onclick="showFullBiography(); ">Read More...</a>
-												
+												<p><%= FormatBiographyText(biography) %> </p>
+												<a href="#" >Read More...</a>
 											</div>
 								</section><!-- /.biography-section -->
 							</main><!-- /.discovery-section -->

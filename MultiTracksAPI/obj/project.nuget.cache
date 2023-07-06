@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RRtRTZNtgaS2Z+2I/uVJwv0qDuTKpGqNvwlFRR/XVzl20Pwk1wIhudYh/68fZpy1cMh7O5+GxTHny7G+dImKWQ==",
+  "dgSpecHash": "ZB2zQVQwdRaNrKBcQr0Br/l2jL/bxxBTfy44shH4B35l4PtWoRoWY3Pb1A4wMeFBVAV5bAbPxh+1Le9I1rD8vA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\louis\\source\\repos\\.MultiTracks\\MultiTracksAPI\\MultiTracksAPI.csproj",
+  "projectFilePath": "C:\\Users\\louis\\Source\\Repos\\.Multi\\MultiTracksAPI\\MultiTracksAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\louis\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\louis\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

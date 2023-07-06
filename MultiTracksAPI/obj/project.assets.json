@@ -4061,11 +4061,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\louis\\source\\repos\\.MultiTracks\\MultiTracksAPI\\MultiTracksAPI.csproj",
+      "projectUniqueName": "C:\\Users\\louis\\Source\\Repos\\.Multi\\MultiTracksAPI\\MultiTracksAPI.csproj",
       "projectName": "MultiTracksAPI",
-      "projectPath": "C:\\Users\\louis\\source\\repos\\.MultiTracks\\MultiTracksAPI\\MultiTracksAPI.csproj",
+      "projectPath": "C:\\Users\\louis\\Source\\Repos\\.Multi\\MultiTracksAPI\\MultiTracksAPI.csproj",
       "packagesPath": "C:\\Users\\louis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\louis\\source\\repos\\.MultiTracks\\MultiTracksAPI\\obj\\",
+      "outputPath": "C:\\Users\\louis\\Source\\Repos\\.Multi\\MultiTracksAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\louis\\AppData\\Roaming\\NuGet\\NuGet.Config",
