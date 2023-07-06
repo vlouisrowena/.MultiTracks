@@ -1,9 +1,14 @@
-## Welcome!
+## MultiTracks Assessment Solution!
 
-So you want to work for MultiTracks.com? This is a step in the right direction!
-
-
-This repo contains a Class Library and a Web Forms Website project. As a member of the DotNET server team at MultiTracks.com you will most likely find yourself in similar projects on a regular basis. We have a number of projects also utilizing DotNetCore and all new projects in DotNet 7.
+This solution consists of:
+  - artistDetails.aspx page that displays an artist's information of a given id.
+      - Change artistID the sql parameter to get a different artist's information in artistDetails.aspx.cs
+  - MultiTracksAPI has 3 end points:
+      -  /artist/search: Search artist information by name. 
+      -  /artist/add: Add an artist by entering title, biography, imageURL, heroURL
+      -  /song/list: pageNumber- the page number of songs and pageSize- number of songs on each page. Maximum number of songs on one page is 30.
+        
+     Swagger UI is used to visualize the endpoints and the exchange of data. 
 
 
 To get started:
