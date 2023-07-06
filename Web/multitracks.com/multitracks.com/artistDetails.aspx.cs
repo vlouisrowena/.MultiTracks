@@ -10,12 +10,12 @@ using System.Web.UI.WebControls.WebParts;
 
 public partial class ArtistDetails : MultitracksPage
 {
-    protected string Biography { get; set; }
+    protected string biography { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
 
         var sql = new SQL();
-        sql.Parameters.Add("@artistId", 31);
+        sql.Parameters.Add("@artistId", 0 );
         var data = sql.ExecuteStoredProcedureDS("GetArtistDetails");
 
         if (data.Tables[0].Rows.Count > 0)
@@ -24,7 +24,7 @@ public partial class ArtistDetails : MultitracksPage
             artistBanner.DataSource = data.Tables[0];
             artistBanner.DataBind();
 
-            Biography = data.Tables[0].Rows[0]["artistBiography"].ToString();
+            biography = data.Tables[0].Rows[0]["artistBiography"].ToString();
 
             songList.DataSource = data.Tables[2];
             songList.DataBind();
@@ -32,7 +32,14 @@ public partial class ArtistDetails : MultitracksPage
             albumList.DataSource = data.Tables[1];
             albumList.DataBind();
 
+            errorMessage.Visible = false;
         }
+        else
+        {
+            errorMessage.Visible = true;
+            artistForm.Visible = false;
+        }
+
     }
 
     protected string FormatBiographyText(string Biography)
